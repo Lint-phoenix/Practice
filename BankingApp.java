@@ -24,7 +24,7 @@ class BankAccount {
             throw new InvalidInputException("Deposit amount must be positive.");
         }
         balance += amount;
-        System.out.println("✅ Deposited: " + amount);
+        System.out.println("Deposited: " + amount);
     }
 
     public void withdraw(double amount) throws InvalidInputException {
@@ -35,11 +35,11 @@ class BankAccount {
             throw new InvalidInputException("Insufficient balance.");
         }
         balance -= amount;
-        System.out.println("✅ Withdrawn: " + amount);
+        System.out.println("Withdrawn: " + amount);
     }
 
     public void displayBalance() {
-        System.out.println("💰 Current Balance: " + balance);
+        System.out.println("Current Balance: " + balance);
     }
 }
 
@@ -57,7 +57,7 @@ public class BankingApp {
             BankAccount account = new BankAccount(name, initialBalance);
 
             while (true) {
-                System.out.println("\n--- Banking Menu ---");
+                System.out.println("\nBanking Menu:");
                 System.out.println("1. Deposit");
                 System.out.println("2. Withdraw");
                 System.out.println("3. Check Balance");
@@ -88,13 +88,13 @@ public class BankingApp {
                             System.out.println("Invalid choice. Try again.");
                     }
                 } catch (InvalidInputException e) {
-                    System.out.println("⚠️ Error: " + e.getMessage());
+                    System.out.println("Error: " + e.getMessage());
                 }
             }
         } catch (InvalidInputException e) {
-            System.out.println("⚠️ Error creating account: " + e.getMessage());
+            System.out.println("Error creating account: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("⚠️ Unexpected error: " + e.getMessage());
+            System.out.println("Unexpected error: " + e.getMessage());
         } finally {
             sc.close();
         }
